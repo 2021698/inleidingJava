@@ -7,10 +7,6 @@ import java.awt.*;
  * Created by Rik van Beek on 10-11-2016.
  */
 public class Opdracht_4_2 extends Applet {
-    @Override
-    public void init() {
-
-    }
 
     @Override
     public void paint(Graphics g) {
