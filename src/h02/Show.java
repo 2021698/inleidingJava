@@ -24,11 +24,11 @@ public class Show extends Applet {
 
     //een (lege) methode die de Applet initialiseert
     public void init() {
-
+        setBackground(Color.blue);
     }
     //een methode die de inhoud van het scherm tekent
     public void paint(Graphics g) {
-        g.drawString("Welcome to Java!!", 50, 60 );
+        g.setColor(Color.yellow);
+        g.drawString("Rik van Beek", 50, 60 );
     }
-
 }
