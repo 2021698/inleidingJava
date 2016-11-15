@@ -15,6 +15,8 @@ public class Opdracht_4_3 extends Applet {
     @Override
     public void paint(Graphics g) {
         g.drawRect(99, 99, 162, 122 );
+        g.setColor(Color.black);
+        g.fillRect(90, 90, 10, 250 );
         g.drawRect(90, 90, 10, 250 );
         g.setColor(Color.red);
         g.fillRect(100, 100, 160, 40 );
