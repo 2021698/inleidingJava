@@ -13,31 +13,42 @@ public class Opdracht_8_1 extends Applet {
         Button knop_reset;
         TextField tekstvak;
         Label label;
+        String s;
 
     @Override
     public void init() {
         knop_ok = new Button("OK");
         knop_reset = new Button("RESET");
-        tekstvak = new TextField("vul hier in!", 20);
+        tekstvak = new TextField("", 20);
         label = new Label("type een getal");
-        tekstvak.addActionListener(new TekstvakListener());
+        knop_ok.addActionListener(new KnopListenero());
+        knop_reset.addActionListener(new KnopListenerr());
         add(label);
         add(tekstvak);
         add(knop_ok);
         add(knop_reset);
+        s = "";
 
     }
 
     @Override
     public void paint(Graphics g) {
-
+        g.drawString(s, 50, 60);
 
 
     }
 
-    class TekstvakListener implements ActionListener {
-        public void actionPerformed(ActionEvent r) {
-            String s = tekstvak.getText();
+    class KnopListenero implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            s = tekstvak.getText();
+            repaint();
+        }
+    }
+
+    class KnopListenerr implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            s = "";
+            repaint();
         }
     }
 }
