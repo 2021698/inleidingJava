@@ -17,12 +17,15 @@ public class Opdracht_8_2 extends Applet {
     Button omannen;
     //ouder vrouwen
     Button ovrouwen;
+    //totaal
+    Button stotaal;
 
     //a = aantal
     int ajongens = 0;
     int ameisjes = 0;
     int amannen = 0;
     int avrouwen = 0;
+    int atotaal = 0;
 
     @Override
     public void init() {
@@ -34,6 +37,8 @@ public class Opdracht_8_2 extends Applet {
         omannen.addActionListener(new OmannenListener());
     ovrouwen = new Button("ouder vrouwen");
         ovrouwen.addActionListener(new OvrouwenListener());
+    stotaal = new Button("totaal");
+        stotaal.addActionListener(new TotaalListener());
     add(sjongens);
     add(smeisjes);
     add(omannen);
@@ -47,6 +52,7 @@ public class Opdracht_8_2 extends Applet {
         g.drawString("aantal studenten meisjes" + ameisjes, 30, 40);
         g.drawString("aantal ouders mannen" + amannen, 30, 50);
         g.drawString("aantal ouders vrouwen" + avrouwen, 30, 60);
+        g.drawString("totaal" + atotaal, 30, 70);
 
     }
 
@@ -74,6 +80,13 @@ public class Opdracht_8_2 extends Applet {
     class OvrouwenListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             avrouwen = avrouwen + 1;
+            repaint();
+        }
+    }
+
+    class TotaalListener implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            atotaal = ajongens + ameisjes + amannen + avrouwen;
             repaint();
         }
     }
