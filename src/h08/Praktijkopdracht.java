@@ -41,6 +41,7 @@ public class Praktijkopdracht extends Applet{
     }
 
     public void paint(Graphics g) {
+
         g.drawString("= " + uitkomst,42,50);
     }
 
