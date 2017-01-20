@@ -4,29 +4,25 @@ import java.applet.Applet;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
+import java.awt.geom.Arc2D;
 
 /**
- * Created by Rik van Beek on 19-1-2017.
- */
-public class Opdracht_10_2 {
-
-
-    /**
      * Created by Rik van Beek on 5-1-2017.
      */
-    public class Opdracht_10_1 extends Applet {
+    public class Opdracht_10_2 extends Applet {
         TextField tekstvak;
         Label label;
         String s, tekst;
         double oud;
-        double hoogste = 0;
+        double hoogste;
         double invoer;
         double laagste;
         Button knop;
 
         @Override
         public void init() {
+            hoogste = Double.MIN_VALUE;
+            laagste = Double.MAX_VALUE;
             tekstvak = new TextField("", 20);
             label = new Label("getal");
             knop = new Button("knop");
@@ -40,9 +36,18 @@ public class Opdracht_10_2 {
 
         @Override
         public void paint(Graphics g) {
-            g.drawString("" + hoogste, 50, 50);
-            g.drawString("" + oud, 50, 80);
-            g.drawString("" + laagste,50,110);
+            if (hoogste == Double.MIN_VALUE) {}
+            else {
+                g.drawString("hoogste " + hoogste, 50, 50);
+            }
+            if (oud == 0) {}
+            else {
+                g.drawString("recent " + oud, 50, 80);
+            }
+            if (laagste == Double.MAX_VALUE) {}
+            else {
+                g.drawString("laagste " + laagste, 50, 110);
+            }
         }
 
         class TekstvakListerner implements ActionListener {
@@ -52,7 +57,8 @@ public class Opdracht_10_2 {
                 invoer = Double.parseDouble(s);
                 if (invoer > hoogste) {
                     hoogste = invoer;
-                } else if (invoer < hoogste) {
+                }
+                if (invoer < laagste) {
                     laagste = invoer;
                 }
                 oud = invoer;
@@ -60,4 +66,4 @@ public class Opdracht_10_2 {
             }
         }
     }
-}
+
