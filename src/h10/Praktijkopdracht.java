@@ -12,8 +12,9 @@ public class Praktijkopdracht extends Applet {
     TextField tekstvak;
     Label label;
     Button knop;
+    String a, tekst;
 
-    double invoer;
+    int invoer;
     double gemiddelde;
     double totaal;
     double aantalcijfers;
@@ -24,6 +25,7 @@ public class Praktijkopdracht extends Applet {
         tekstvak.addActionListener(new TekstvakListener());
         label = new Label();
         knop = new Button();
+        tekst = "";
         add(label);
         add(tekstvak);
         add(knop);
@@ -32,30 +34,47 @@ public class Praktijkopdracht extends Applet {
 
     @Override
     public void paint(Graphics g) {
-        if (invoer < 3.1) {
-            g.drawString("Cijfer is slecht ", 50, 50);
-        }
-        if (invoer > 4 && invoer < 5) {
-            g.drawString("Cijfer is onvoldoende ", 50, 50);
-        }
-        if (invoer > 5 && invoer < 6) {
-            g.drawString("Cijfer is matig", 50, 50);
-        }
-        if (invoer > 6 && invoer < 8) {
-            g.drawString("Cijfer is goed",50,50);
-        }
+        g.drawString(tekst + invoer, 50,50);
     }
 
     class TekstvakListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            String a = tekstvak.getText();
-            invoer = Double.parseDouble(a);
-
-            totaal += invoer;
-            aantalcijfers ++;
-
-            gemiddelde = totaal / aantalcijfers;
+            a = tekstvak.getText();
+            invoer = Integer.parseInt(a);
+            switch (invoer) {
+                case 1:
+                    tekst = "Cijfer is slecht ";
+                    break;
+                case 2:
+                    tekst = "Cijfer is slecht ";
+                    break;
+                case 3:
+                    tekst = "Cijfer is slecht ";
+                    break;
+                case 4:
+                    tekst = "Cijfer is een onvoldoende ";
+                    break;
+                case 5:
+                    tekst = "Cijfer is matig ";
+                    break;
+                case 6:
+                    tekst = "Cijfer is een voldoende ";
+                    break;
+                case 7:
+                    tekst = "Cijfer is een voldoende ";
+                    break;
+                case 8:
+                    tekst = "Cijfer is een goed ";
+                    break;
+                case 9:
+                    tekst = "Cijfer is een goed ";
+                    break;
+                case 10:
+                    tekst = "Cijfer is een goed ";
+                    break;
+            }
+            repaint();
         }
     }
 }
