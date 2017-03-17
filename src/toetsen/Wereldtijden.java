@@ -9,22 +9,22 @@ import java.awt.event.ActionListener;
  * Created by Rik van Beek on 17-3-2017.
  */
 public class Wereldtijden extends Applet {
-        //invoer = wat de gebruiker invoert
+        //invoer = wat de gebruiker invoert.
         int invoer;
-        //boolean
+        //boolean.
         boolean klik;
-
+        //TextField hier kan de gebruiker de tijd invoeren.
         TextField tekstvak;
 
     public void init() {
-        //Label Voer een uur in
+        //Label Voer een uur in.
         Label label;
         label = new Label("Voer een uur in");
         add(label);
-        //TextField voor gebruiker
+        //TextField voor gebruiker.
         tekstvak = new TextField("Hier");
         add(tekstvak);
-        //Button om de ingevoerde tijd te bevestigen
+        //Button om de ingevoerde tijd te bevestigen.
         Button knop;
         knop = new Button("OK");
         add(knop);
@@ -35,31 +35,31 @@ public class Wereldtijden extends Applet {
     }
 
     public void paint(Graphics g) {
-        //Integer variables
+        //Integer variables.
         int londen;
         int tokyo;
         int newyork;
         int sydney;
-        //locatie van de tijd dat op beeld getoont wordt
+        //locatie van de tijd dat op beeld getoont wordt.
         int x = 50;
         int y = 60;
         if (klik) {
-            //Tijd Londen
+            //Tijd Londen.
             londen = invoer -1;
             if (londen < 0) {
                 londen = londen + 24;
             }
-            //Tijd Tokyo
+            //Tijd Tokyo.
             tokyo = invoer + 7;
             if (tokyo > 24) {
                 tokyo = tokyo - 24;
             }
-            //Tijd New York
+            //Tijd New York.
             newyork = invoer - 6;
             if (newyork < 0) {
                 newyork = newyork + 24;
             }
-            //Tijd Sydney
+            //Tijd Sydney.
             sydney = invoer + 9;
             if (sydney > 24) {
                 sydney = sydney - 24;
@@ -68,6 +68,7 @@ public class Wereldtijden extends Applet {
                 g.drawString("invoer niet geldig",x,y);
             }
             else {
+                //Tijd in Londen, Tokyo, NewYork en Sydney dit ziet de gebruiker op het scherm
                 g.drawString("Tijd in Londen: " + londen + ":00",x,y);
                 y += 20;
                 g.drawString("Tijd in Tokyo: " + tokyo + ":00",x,y);
@@ -80,6 +81,7 @@ public class Wereldtijden extends Applet {
     }
     class KnopListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
+            //hier haal ik de tijd op.
             String tv;
             tv = tekstvak.getText();
             invoer = (int) Double.parseDouble(tv);
