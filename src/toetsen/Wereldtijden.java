@@ -69,6 +69,7 @@ public class Wereldtijden extends Applet {
             }
             else {
                 //Tijd in Londen, Tokyo, NewYork en Sydney dit ziet de gebruiker op het scherm
+                //En y wordt elke keer met 20 verhoogd.
                 g.drawString("Tijd in Londen: " + londen + ":00",x,y);
                 y += 20;
                 g.drawString("Tijd in Tokyo: " + tokyo + ":00",x,y);
