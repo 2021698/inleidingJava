@@ -6,7 +6,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 /**
- * Created by Rik van Beek on 21-4-2017.
+ * Created by Rik van Beek on 12-5-2017.
  */
 public class Praktijkopdracht extends Applet {
 
