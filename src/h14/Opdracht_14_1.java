@@ -63,6 +63,7 @@ public class Opdracht_14_1 extends Applet {
     String[] kaartnummer = {"A","2","3","4","5","6","7","8","9","10","Boer","Vrouw","Heer"};
 
     public void init(){
+        random = Math.random();
         worp  = (int)(random*13);
         soort = (int)(random*4);
         kleur= kaartsoort[soort];
