@@ -34,8 +34,6 @@ public class Praktijkopdracht extends Applet {
                 y1 += 40;
                 x1 = 0;
             }
-
-
         }
     }
 }
