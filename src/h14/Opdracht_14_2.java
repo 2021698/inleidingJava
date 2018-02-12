@@ -8,17 +8,14 @@ import java.awt.*;
  */
 public class Opdracht_14_2 extends Applet {
 
-    double randomValue, random2, random3, random4;
-    int card, worp2, worp3, worp4;
+    double randomValue;
+    int card;
 
 
     String[] kaartsoort = {"Klaver", "Harten", "Schoppen", "Ruiten"};
     String[] kaartnummer = {"A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Boer", "Vrouw", "Heer"};
 
     String[] deck1;
-    String[] deck2;
-    String[] deck3;
-    String[] deck4;
 
 
     public void init() {
