@@ -8,12 +8,12 @@ import java.awt.*;
  */
 public class Opdracht_14_2 extends Applet {
 
-    double random1, random2, random3, random4;
-    int worp1,worp2,worp3,worp4;
+    double randomValue, random2, random3, random4;
+    int card, worp2, worp3, worp4;
 
 
-    String[] kaartsoort = {"Klaver","Harten","Schoppen","Ruiten"};
-    String[] kaartnummer = {"A","2","3","4","5","6","7","8","9","10","Boer","Vrouw","Heer"};
+    String[] kaartsoort = {"Klaver", "Harten", "Schoppen", "Ruiten"};
+    String[] kaartnummer = {"A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Boer", "Vrouw", "Heer"};
 
     String[] deck1;
     String[] deck2;
@@ -24,19 +24,9 @@ public class Opdracht_14_2 extends Applet {
     public void init() {
 
 
-        deck1 = new String[13];
-        deck2 = new String[13];
-        deck3 = new String[13];
-        deck4 = new String[13];
-        random1 = Math.random();
-        random2 = Math.random();
-        random3 = Math.random();
-        random4 = Math.random();
-        worp1 = (int)(random1*52);
-        worp2 = (int)(random2*52);
-        worp3 = (int)(random3*52);
-        worp4 = (int)(random4*52);
-        int hulpindex1 = 0, hulpindex2 = 0, hulpindex3 = 0, hulpindex4 = 0;
+        deck1 = new String[52];
+
+        int hulpindex1 = 0;
 
         for (int i = 0; i < kaartsoort.length; i++) {
             String soort1 = kaartsoort[i];
@@ -47,39 +37,28 @@ public class Opdracht_14_2 extends Applet {
             }
         }
 
-        for (int i = 0; i <kaartsoort.length; i++) {
-            String soort2 = kaartsoort[i];
-            for (int j = 0; j < kaartnummer.length; j++) {
-                String nummer2 = kaartnummer[j];
-                deck2[hulpindex2] = soort2 + " " + nummer2;
-                hulpindex2++;
-            }
-        }
-
-        for (int i = 0; i <kaartsoort.length; i++) {
-            String soort3 = kaartsoort[i];
-            for (int j = 0; j < kaartnummer.length; j++) {
-                String nummer3 = kaartnummer[j];
-                deck3[hulpindex3] = soort3 + " " + nummer3;
-                hulpindex3++;
-            }
-        }
-
-        for (int i = 0; i <kaartsoort.length; i++) {
-            String soort4 = kaartsoort[i];
-            for (int j = 0; j < kaartnummer.length; j++) {
-                String nummer4 = kaartnummer[j];
-                deck4[hulpindex4] = soort4 + " " + nummer4;
-                hulpindex4++;
-            }
-        }
     }
 
     public void paint(Graphics g) {
-
-        g.drawString("gedeelde kaart: " +  deck1[worp1]+" ",100,100);
-        g.drawString("gedeelde kaart: " +  deck2[worp2]+" ",100,100);
-        g.drawString("gedeelde kaart: " +  deck3[worp3]+" ",100,100);
-        g.drawString("gedeelde kaart: " +  deck4[worp4]+" ",100,100);
+        for (int a = 0; a < 13; a++) {
+            randomValue = Math.random();
+            card = (int) (randomValue * 52);
+            g.drawString("gedeelde kaart: " + deck1[card] + " ", 25, 50 * a);
+        }
+        for (int a = 0; a < 13; a++) {
+            randomValue = Math.random();
+            card = (int) (randomValue * 52);
+            g.drawString("gedeelde kaart: " + deck1[card] + " ", 225, 50 * a);
+        }
+        for (int a = 0; a < 13; a++) {
+            randomValue = Math.random();
+            card = (int) (randomValue * 52);
+            g.drawString("gedeelde kaart: " + deck1[card] + " ", 425, 50 * a);
+        }
+        for (int a = 0; a < 13; a++) {
+            randomValue = Math.random();
+            card = (int) (randomValue * 52);
+            g.drawString("gedeelde kaart: " + deck1[card] + " ", 625, 50 * a);
+        }
     }
 }
